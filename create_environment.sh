@@ -23,6 +23,7 @@ echo "Days remaining to submit: $DAYS_REMAINING days"
 echo "--------------------------------------------"
 
 check_submissions $submissions_file
+
 EOF
 cat << 'EOF' > $main_dir/modules/functions.sh
 #!/bin/bash
@@ -40,11 +41,14 @@ function check_submissions {
         status=$(echo "$status" | xargs)
 
         # Check if assignment matches and status is 'not submitted'
-        if [[ "$student" == "$username" && "$assignment" == "$ASSIGNMENT" && "$status" == "not submitted" ]]; then
-            echo "Reminder: $student has not submitted the $ASSIGNMENT assignment!"
+        if [[ "$status" == "not submitted" ]]; then
+            echo "Reminder: $student has not submitted the $assignment assignment!"
+        elif [[ $status" == ""submitted" ]]; then
+            echo "Reminder: $student has submitted the $assignment assignment!"
         fi
     done < <(tail -n +2 "$submissions_file") # Skip the header
 }
+
 EOF
 cat << 'EOF' > $main_dir/assets/submissions.txt
 student, assignment, submission status
@@ -64,8 +68,9 @@ Ivan, Geography Case Study, not submitted
 Judy, Statistics Quiz, submitted
 EOF
 cat << 'EOF' > $main_dir/config/config.env
+
 # This is the config file
-ASSIGNMENT=("Shell Navigation" "Git" "Shell Basics" "Math Homework"  "Science Project" "History Essay" "Programming Lab" "Physics Report" "Chemistry Assignment" "Biology Worksheet" "English Presentation" "Geography Case Study" "Statistics Quiz")
+ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 cat << 'EOF' > $main_dir/startup.sh
