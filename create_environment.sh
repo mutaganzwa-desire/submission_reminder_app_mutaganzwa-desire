@@ -1,6 +1,6 @@
 #!/bin/bash
 #Ask the github username
-read -p 'Enter your github username: ' username
+read -p 'Please enter your name: ' username
 #Create the main directory
 main_dir=submission_reminder_$username
 mkdir -p $main_dir
@@ -83,4 +83,5 @@ EOF
 #Make all required files executable
 chmod +x $main_dir/startup.sh $main_dir/app/reminder.sh $main_dir/modules/functions.sh
 #success message
-echo 'Environment successfully created'
+echo "Environment successfully created."
+echo "Change the directory to submission_reminder_$username and run startup.sh script using the ./startup.sh command to view students' submitted and/or pending submissions."

@@ -36,39 +36,15 @@ When you run the environment setup script (`create_environment.sh`), it creates 
      ```
    - Each row represents a student’s submission status for a specific assignment.
 
-4. Running the Application:
-   - When you run `startup.sh`, the app will:
-     - Source the configuration and helper function files.
-     - Prompt you to enter your username.
-     - Display the assignment details (name and days remaining).
-     - Read through `submissions.txt` and check for records where:
-       - The student matches the username you entered.
-       - The assignment matches the one specified in `config.env`.
-       - The submission status is `"not submitted"`.
-     - If these conditions are met, the app outputs a reminder message.
-
-5. Usage Example:
-   - Upon running the app:
-     ```bash
-     ./startup.sh
-     ```
-   - You might see:
-     ```
-     Enter your username: bob
-     Assignment: Shell Navigation
-     Days remaining to submit: 2 days
-     --------------------------------------------
-     Reminder: bob has not submitted the Shell Navigation assignment!
-     ```
 
 ## How to Run the App
 
 1. Set Up the Environment:
-   - Make the setup script executable and run it:
+   - Run the create_environment.sh script:
      ```bash
-     chmod +x create_environment.sh
      ./create_environment.sh
      ```
+   - Enter your username when prompted.
    - This creates the `submission_reminder_<yourName>` directory with all the necessary files.
 
 2. Start the Application:
@@ -76,17 +52,10 @@ When you run the environment setup script (`create_environment.sh`), it creates 
      ```bash
      cd submission_reminder_<yourName>
      ```
-   - Make the startup script executable (if not already):
-     ```bash
-     chmod +x startup.sh
-     ```
    - Run the application:
      ```bash
      ./startup.sh
      ```
-
-3. Follow the Prompts:
-   - Enter your username when prompted to see your pending submissions.
 
 ## Requirements
 
