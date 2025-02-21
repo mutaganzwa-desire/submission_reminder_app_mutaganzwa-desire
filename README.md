@@ -1,6 +1,6 @@
 # Submission Reminder App
 
-This Submission Reminder App is a Bash-based application designed to help students keep track of their pending assignment submissions. The app reads assignment data from a CSV file and displays a reminder for each student who has not yet submitted the assignment.
+This Submission Reminder App is a Bash-based application designed to help students keep track of their pending assignment submissions. The app reads assignment data from a CSV file and displays a reminder for each student's submission status.
 
 ## Directory Structure
 
