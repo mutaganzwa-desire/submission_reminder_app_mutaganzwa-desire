@@ -1,6 +1,13 @@
 #!/bin/bash
 #Ask the github username
-read -p 'Please enter your name: ' username
+while true;do
+	read -p 'Please enter your name: ' username
+	if [[ -z "$username" ]];then
+		echo "Please enter your name!"
+	else
+		break
+	fi
+done
 #Create the main directory
 main_dir=submission_reminder_$username
 mkdir -p $main_dir
@@ -52,14 +59,14 @@ function check_submissions {
 EOF
 cat << 'EOF' > $main_dir/assets/submissions.txt
 student, assignment, submission status
-Chinemerem, Shell Navigation, not submitted
-Chiagoziem, Shell Navigation, submitted
-Divine, Shell Navigation, not submitted
 Anissa, Shell Navigation, submitted
 Alice, Shell Navigation, submitted
 Bob, Shell Navigation, not submitted
 Charlie, Shell Navigation, submitted
+Chiagoziem, Shell Navigation, submitted
+Chinemerkem, Shell Navigation, not submitted
 David, Shell Navigation, not submitted
+Divine, Shell Navigation, not submitted
 Eve, Shell Navigation, not submitted
 Frank, Shell Navigation, submitted
 Grace, Shell Navigation, not submitted
@@ -83,5 +90,7 @@ EOF
 #Make all required files executable
 chmod +x $main_dir/startup.sh $main_dir/app/reminder.sh $main_dir/modules/functions.sh
 #success message
-echo "Environment successfully created."
-echo "Change the directory to submission_reminder_$username and run startup.sh script using the ./startup.sh command to view students' submitted and/or pending submissions."
+echo "  .Environment successfully created."
+echo "   -Change the directory to submission_reminder_$username"
+echo "   -Run startup.sh script using the ./startup.sh command to view students' submitted and/or pending submissions."
+echo "  .Note: All scripts already have executble permissions."
