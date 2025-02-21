@@ -46,6 +46,12 @@ When you run the environment setup script (`create_environment.sh`), it creates 
      ```
    - Enter your username when prompted.
    - This creates the `submission_reminder_<yourName>` directory with all the necessary files.
+   - 📌 Input Required
+
+Your input is mandatory. Please provide the requested information to proceed.
+If no input is given, you will be prompted again until a valid response is entered.
+
+Thank you for your cooperation! 😊
 
 2. Start the Application:
    - Navigate into the created directory:
