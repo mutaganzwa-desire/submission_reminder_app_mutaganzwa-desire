@@ -70,9 +70,6 @@ Thank you for your cooperation! 😊
 - Standard Unix Utilities: 
   The scripts use standard Unix commands such as `cat`, `xargs`, and `tail`.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
